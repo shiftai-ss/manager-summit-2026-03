@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サクセスソリューション部｜2026年3月 マネージャーサミット</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+<style>
+  :root {
+    --primary: #e8706a;
+    --primary-light: #fef3f2;
+    --accent: #7ec8c8;
+    --accent-light: #f0f7f7;
+    --purple: #c4a6d6;
+    --purple-light: #f5f0fa;
+    --dark: #1a1a1a;
+    --gray: #666;
+    --light-gray: #f7f7fa;
+    --border: #e8e8e8;
+    --white: #ffffff;
+    --shadow: 0 2px 16px rgba(0,0,0,0.06);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--dark);
+    background: var(--white);
+    line-height: 1.8;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, #e8706a 0%, #c4a6d6 40%, #7ec8c8 100%);
+    padding: 72px 48px 56px;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .hero .dept-label {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    opacity: 0.85;
+  }
+  .hero h1 {
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    margin: 4px 0 16px;
+  }
+  .hero .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(4px);
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  /* ===== CONTAINER ===== */
+  .container { max-width: 920px; margin: 0 auto; padding: 0 32px; }
+
+  /* ===== SECTION ===== */
+  .section { padding: 48px 0; }
+  .section + .section { border-top: 1px solid var(--border); }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title .material-icons-round {
+    font-size: 28px;
+    color: var(--primary);
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), transparent);
+    border-radius: 2px;
+    margin-left: 8px;
+  }
+
+  /* ===== TEAM HEADER ===== */
+  .team-header {
+    margin: 36px 0 20px;
+    padding-left: 16px;
+    border-left: 4px solid var(--primary);
+  }
+  .team-header h3 {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .team-header .pm {
+    font-size: 13px;
+    color: var(--gray);
+    font-weight: 400;
+  }
+  .team-header.accent { border-left-color: var(--accent); }
+  .team-header.purple { border-left-color: var(--purple); }
+
+  /* ===== PURPOSE BOX ===== */
+  .purpose {
+    background: #fef9f0;
+    border-left: 4px solid #f5a623;
+    padding: 16px 20px;
+    margin: 12px 0 20px;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+  }
+  .purpose strong { color: var(--dark); }
+  .purpose .hl { color: var(--primary); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ===== STATS ===== */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin: 16px 0 20px;
+  }
+  .stat {
+    background: var(--light-gray);
+    border-radius: 12px;
+    padding: 18px 16px;
+    text-align: center;
+  }
+  .stat .num {
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1.2;
+  }
+  .stat .num .unit { font-size: 14px; font-weight: 600; }
+  .stat .label {
+    font-size: 11px;
+    color: var(--gray);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+  .stat.hero-stat {
+    background: linear-gradient(135deg, var(--primary), var(--purple));
+    color: var(--white);
+  }
+  .stat.hero-stat .num, .stat.hero-stat .label { color: var(--white); }
+  .stat.hero-stat .label { opacity: 0.9; }
+
+  .change {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  /* ===== ITEMS ===== */
+  .items { margin: 12px 0; }
+  .item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: flex-start;
+  }
+  .item:last-child { border-bottom: none; }
+  .item .n {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .item .n.green { background: var(--accent); }
+  .item .body { flex: 1; }
+  .item .title { font-weight: 700; font-size: 14px; }
+  .item .desc { font-size: 13px; color: var(--gray); line-height: 1.6; margin-top: 2px; }
+
+  /* ===== IMAGE GRID ===== */
+  .img-grid {
+    display: grid;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .img-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+  .img-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .img-grid img, .img-single img {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow);
+    display: block;
+  }
+  .img-single { margin: 16px 0; }
+  .img-caption {
+    font-size: 11px;
+    color: #999;
+    text-align: center;
+    margin-top: 6px;
+  }
+
+  /* ===== HIGHLIGHT BOX ===== */
+  .highlight-box {
+    background: linear-gradient(135deg, var(--primary-light), var(--purple-light));
+    border-radius: var(--radius);
+    padding: 28px;
+    margin: 20px 0;
+  }
+  .highlight-box h4 {
+    font-size: 17px;
+    font-weight: 900;
+    color: var(--primary);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ===== QUOTE ===== */
+  .quote {
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    padding: 14px 20px;
+    margin: 12px 0;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-style: italic;
+    color: #555;
+    font-size: 14px;
+  }
+
+  /* ===== NEXT ACTIONS ===== */
+  .next-box {
+    background: var(--light-gray);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 16px 0;
+  }
+  .next-box h4 {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: var(--dark);
+  }
+  .next-box ul { list-style: none; }
+  .next-box li {
+    padding: 6px 0 6px 20px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .next-box li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-size: 9px;
+    top: 10px;
+  }
+
+  /* ===== DEPT INTRO ===== */
+  .dept-intro {
+    background: var(--light-gray);
+    border-radius: var(--radius);
+    padding: 28px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #555;
+  }
+  .dept-intro strong { color: var(--dark); }
+
+  /* ===== PHASE LABEL ===== */
+  .phase-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin: 32px 0 16px;
+  }
+  .phase-label.mar {
+    background: var(--accent);
+  }
+
+  /* ===== DIVIDER ===== */
+  .team-divider {
+    margin: 40px 0 0;
+    padding-top: 28px;
+    border-top: 1px dashed #ddd;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 48px 32px;
+    color: #bbb;
+    font-size: 11px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 640px) {
+    .hero { padding: 48px 24px 40px; }
+    .hero h1 { font-size: 26px; }
+    .container { padding: 0 20px; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .img-grid.cols-2, .img-grid.cols-3 { grid-template-columns: 1fr; }
+    .stat .num { font-size: 24px; }
+  }
+
+  @media print {
+    .hero { padding: 32px; }
+    .section { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="container">
+    <div class="dept-label">コミュニティ事業本部</div>
+    <h1>サクセスソリューション部</h1>
+    <div class="badge">2026年 2月実績 〜 3月の取り組み｜マネージャーサミット</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ===== 部門紹介 ===== -->
+<div class="section">
+  <div class="section-title">
+    <span class="material-icons-round">groups</span>
+    サクセスソリューション部とは
+  </div>
+  <div class="dept-intro">
+    サクセスソリューション部は、SHIFT AIの会員が<strong>"自走できる状態"</strong>をつくり、
+    学びを成果につなげることを目的とした支援部門です。<br>
+    ウェビナーや合宿、マンツーマンサポート、Discord、47PJなど各種会員様向けの
+    企画を通じて、教材だけでは得られない<strong>「実践・習慣化・仲間づくり」</strong>の機会を提供し、
+    成果に直結する体験設計を行っています。<br><br>
+    チーム全体で<strong>「成果にコミットする」</strong>という姿勢を大切にし、
+    課題を解決するための最適な手段（＝ソリューション）を常に考え続けています。
+    チームは大きく分けて<strong>4チーム</strong>で、全会員様にとって成果の出る企画を検討し、実行しています。
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ===== アクティブリテンションチーム ===== -->
+<!-- ============================================================ -->
+<div class="section">
+  <div class="section-title">
+    <span class="material-icons-round">shield</span>
+    アクティブリテンションチーム
+  </div>
+  <p style="color:var(--gray); font-size:13px; margin-top:-16px;">統括PM：浪方さん</p>
+
+  <!-- ── ローカルリテンション ── -->
+  <div class="team-header">
+    <h3>1. ローカルリテンションチーム<span class="pm">（永澤さん）— 47PJ・アンバサダー制度</span></h3>
+  </div>
+
+  <div class="purpose">
+    <strong>目的：</strong>地方在住の会員様が、場所に関係なく「学び続けられている実感」と「所属感」を持てる状態をつくり、結果として<span class="hl">退会率を抑制</span>する
+  </div>
+
+  <!-- 2月 -->
+  <div class="phase-label"><span class="material-icons-round" style="font-size:16px;">calendar_month</span> 2月の実績</div>
+
+  <h4 style="font-size:15px; font-weight:700; margin:12px 0 8px;">ゆるっと作業会</h4>
+  <div class="stats">
+    <div class="stat">
+      <div class="num">14<span class="unit">県</span></div>
+      <div class="label">2月開催数</div>
+    </div>
+    <div class="stat">
+      <div class="num">4.56</div>
+      <div class="label">満足度平均</div>
+    </div>
+  </div>
+  <p style="font-size:14px; color:var(--gray);">
+    2・3月は土台を整えることに注力。目標の月38県開催には届かなかったものの、着実に開催地域を拡大。
+  </p>
+
+  <!-- 3月〜 -->
+  <div class="phase-label mar"><span class="material-icons-round" style="font-size:16px;">rocket_launch</span> 3月〜来月の取り組み</div>
+
+  <div class="stats">
+    <div class="stat hero-stat">
+      <div class="num">25<span class="unit">県</span></div>
+      <div class="label">3月開催数（予定含む）</div>
+    </div>
+  </div>
+
+  <h4 style="font-size:15px; font-weight:700; margin:20px 0 8px;">サテライトイベント</h4>
+  <div class="stats">
+    <div class="stat">
+      <div class="num">17<span class="unit">県</span></div>
+      <div class="label">4/4 チャエンさん出版記念<br>特別イベントサテライト</div>
+    </div>
+    <div class="stat hero-stat">
+      <div class="num">39<span class="unit">県</span></div>
+      <div class="label">4/18 大規模イベントサテライト<br>（47都道府県を目指し調整中）</div>
+    </div>
+  </div>
+
+  <div class="next-box">
+    <h4>特別企画</h4>
+    <ul>
+      <li><strong>4/10「ゆるっと作業会 in 北海道 けいたろうさん特別ver」</strong>開催予定<br>
+        <span style="font-size:12px; color:var(--gray);">北海道会員様が熱望していた独自イベントが、けいたろうさんイベントで実現（主催者確保済み）</span>
+      </li>
+    </ul>
+  </div>
+
+
+  <!-- ── Discord ── -->
+  <div class="team-divider"></div>
+  <div class="team-header accent">
+    <h3>2. Discordチーム<span class="pm">（Ninonさん）</span></h3>
+  </div>
+
+  <div class="purpose">
+    <strong>目的：</strong>Discordを、会員がAI学習・実践・交流を継続できる場として設計し、来訪しやすさ・発言しやすさ・継続しやすさを高めることで、会員の<span class="hl">行動量</span>と<span class="hl">定着率</span>を伸ばす
+  </div>
+
+  <!-- 2月→3月実績 -->
+  <div class="phase-label"><span class="material-icons-round" style="font-size:16px;">trending_up</span> 実績（2026年3月時点）</div>
+
+  <div class="stats">
+    <div class="stat hero-stat">
+      <div class="num">6,035<span class="unit">名</span></div>
+      <div class="label">行動している会員様<br>（発言/リアクション等）</div>
+    </div>
+    <div class="stat">
+      <div class="num"><span class="change">+967名</span></div>
+      <div class="label">前月比</div>
+    </div>
+    <div class="stat hero-stat">
+      <div class="num">1,026<span class="unit">名</span></div>
+      <div class="label">月3回以上発言<br>（行動継続会員）</div>
+    </div>
+    <div class="stat">
+      <div class="num"><span class="change">+430名</span></div>
+      <div class="label">前月比</div>
+    </div>
+  </div>
+
+  <p style="font-size:14px; color:var(--gray);">
+    ▶ 発言・行動ともに増加。「参加しているだけ」から<strong style="color:var(--dark);">「実際に動く」</strong>会員様が広がっている状態。
+  </p>
+
+  <!-- 2月実施 -->
+  <div class="phase-label"><span class="material-icons-round" style="font-size:16px;">build</span> 2月〜3月に実施したこと</div>
+
+  <div class="items">
+    <div class="item">
+      <div class="n">1</div>
+      <div class="body">
+        <div class="title">やったことチェックリストの導入</div>
+        <div class="desc">学習の進捗経過がわかる仕組み。会員様が成長を可視化できるように。</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="n">2</div>
+      <div class="body">
+        <div class="title">連続記録達成を判定する仕組みの導入</div>
+        <div class="desc">日報の提出などの継続と達成度を判定し、継続的な行動を促進。</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="n">3</div>
+      <div class="body">
+        <div class="title">講師が厳選したピックアップニュースの配信開始</div>
+        <div class="desc">AI関連の最新情報を講師が厳選して配信。来訪理由の創出に貢献。</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="n">4</div>
+      <div class="body">
+        <div class="title">Discord改善アンケートの実施</div>
+        <div class="desc">「もっと使われるDiscordに」するため、全会員の声を直接収集。</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="n">5</div>
+      <div class="body">
+        <div class="title">アンケート結果に基づいた新チャンネルの準備</div>
+        <div class="desc">会員様のニーズに応えた新チャンネルの設計・準備を進行中。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Discord画像 -->
+  <div class="img-grid cols-2">
+    <div>
+      <img src="images/discord_checklist.png" alt="やったことチェックリスト">
+      <div class="img-caption">やったことチェックリスト — 100%達成画面</div>
+    </div>
+    <div>
+      <img src="images/discord_weekly_ranking.png" alt="WEEKLY RANKING">
+      <div class="img-caption">WEEKLY RANKING — レベルアップ＆学習時間表彰</div>
+    </div>
+  </div>
+  <div class="img-grid cols-2">
+    <div>
+      <img src="images/discord_pickup_news.png" alt="講師ピックアップニュース">
+      <div class="img-caption">講師ピックアップニュース配信</div>
+    </div>
+    <div>
+      <img src="images/discord_survey_results.png" alt="改善アンケート結果">
+      <div class="img-caption">Discord改善アンケート結果報告</div>
+    </div>
+  </div>
+  <div class="img-single">
+    <img src="images/discord_channel_structure.png" alt="新チャンネル構成" style="max-width:600px; margin:0 auto;">
+    <div class="img-caption">新Discordチャンネル構成</div>
+  </div>
+
+  <!-- 3月〜 -->
+  <div class="phase-label mar"><span class="material-icons-round" style="font-size:16px;">arrow_forward</span> 今後の方針</div>
+  <p style="font-size:14px; color:var(--gray);">
+    Discordコミュニティは「行動が生まれる場所」へ段階が進んでいます。
+  </p>
+  <div class="quote">
+    『参加 → 質問相談 → 行動 → 成長(アクションノート等) → 成果実現 』<br>
+    この流れが自然につながるコミュニティ構造への進化を進めていきます。
+  </div>
+
+
+  <!-- ── AI人材サポート ── -->
+  <div class="team-divider"></div>
+  <div class="team-header purple">
+    <h3>3. AI人材サポートチーム<span class="pm">（山下さん）</span></h3>
+  </div>
+
+  <div class="purpose">
+    <strong>目的：</strong>会員一人ひとりの多様な成果を「再現性のある構造」として可視化し、学び・実践・キャリアの循環を促進することで、AIキャリアにおける支援価値を最大化する
+  </div>
+
+  <p style="font-size:14px; color:var(--gray); margin-top:8px;">
+    各PJにおいて現状整理と再設計を進め、フローや役割分担など前提設計を整理。<br>
+    現在は設計内容の具体化を進めており、順次実装・運用フェーズへの移行を予定。
+  </p>
+
+  <div class="phase-label"><span class="material-icons-round" style="font-size:16px;">assignment</span> 2月〜3月の取り組み</div>
+
+  <div class="items">
+    <div class="item">
+      <div class="n green">1</div>
+      <div class="body">
+        <div class="title">成果報告PJ（進捗報告再設計）</div>
+        <div class="desc">
+          成果報告数の減少を受け、CXチームと連携し成果報告の再設計を実施。<br>
+          ・成果報告項目の再整理<br>
+          ・報告動機（メリット）の設計<br>
+          ・提出後フィードバック設計<br>
+          ・会員のステージ別にフィードバックを行う方針を整理し、具体設計のたたき台を作成<br>
+          業務効率化チームとも連携し、提出後に個別フィードバックレポートを送付できる仕組みの構築を進行中。
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="n green">2</div>
+      <div class="body">
+        <div class="title">チーム内効率化PJ</div>
+        <div class="desc">
+          ヒアリング内容からスライド作成までの工程自動化を目的に、スプレッドシート整形工程の設計およびプロトタイプ構築を開始。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="num">60<span class="unit">h</span></div>
+      <div class="label">工数削減目標</div>
+    </div>
+    <div class="stat">
+      <div class="num">5月末</div>
+      <div class="label">完成目標</div>
+    </div>
+    <div class="stat">
+      <div class="num">約5<span class="unit">%</span></div>
+      <div class="label">現在進捗（初期検証段階）</div>
+    </div>
+  </div>
+
+  <div class="items">
+    <div class="item">
+      <div class="n green">3</div>
+      <div class="body">
+        <div class="title">他チーム連携（ローカルリテンション）</div>
+        <div class="desc">地方実績者DB化に向け、対象者の状況把握、取得項目、アプローチ方法について論点整理を実施。現在はDB化に向けた具体設計を進行中。</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ============================================================ -->
+<!-- ===== オンラインイベントチーム ===== -->
+<!-- ============================================================ -->
+<div class="section">
+  <div class="section-title">
+    <span class="material-icons-round">play_circle</span>
+    オンラインイベントチーム
+  </div>
+  <p style="color:var(--gray); font-size:13px; margin-top:-16px;">統括PM：田松さん</p>
+
+  <!-- ── ウェビナー ── -->
+  <div class="team-header">
+    <h3>1. ウェビナーチーム<span class="pm">（田松さん）</span></h3>
+  </div>
+
+  <div class="purpose">
+    <strong>目的：</strong>ウェビナーを通じて、学びが実務・収益につながる<strong>「成果創出型の体験」</strong>を提供し、<span class="hl">退会率抑制</span>と<span class="hl">継続率向上</span>に繋げる
+  </div>
+
+  <!-- 2月 -->
+  <div class="phase-label"><span class="material-icons-round" style="font-size:16px;">bar_chart</span> 2月の実績</div>
+
+  <div class="stats">
+    <div class="stat hero-stat">
+      <div class="num">56<span class="unit">件</span></div>
+      <div class="label">実施件数</div>
+    </div>
+    <div class="stat">
+      <div class="num">4.52</div>
+      <div class="label">平均満足度</div>
+    </div>
+  </div>
+
+  <div class="img-single">
+    <img src="images/webinar_feb_security.png" alt="2月ウェビナー: AIコーディングによるセキュリティ危機" style="max-width:560px;">
+    <div class="img-caption">2月開催: AIコーディングによるセキュリティ危機（2026.2.10）</div>
+  </div>
+
+  <!-- 3月 -->
+  <div class="phase-label mar"><span class="material-icons-round" style="font-size:16px;">campaign</span> 3月の新規企画・取り組み</div>
+
+  <div class="items">
+    <div class="item">
+      <div class="n">1</div>
+      <div class="body">
+        <div class="title">YouTubeライブで非会員様も参加できるウェビナーの実施</div>
+        <div class="desc">オーガニックでの流入やCSR面への寄与を目指した新たな取り組み。SHIFT AIの価値を外部にも届ける施策として展開中。</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="n">2</div>
+      <div class="body">
+        <div class="title">Xライブ × YouTubeライブの同時配信</div>
+        <div class="desc">3月は3ウェビナーで同時配信を予定。リーチの最大化を図る。</div>
+      </div>
+    </div>
+  </div>
+
+  <h4 style="font-size:14px; font-weight:700; margin:20px 0 8px; color:var(--gray);">3月の外部公開ウェビナー</h4>
+  <div class="img-grid cols-3">
+    <div>
+      <img src="images/webinar_mar_kazunari.png" alt="かずなりさんウェビナー">
+      <div class="img-caption">3/15 かずなりさん<br>AIコンサル案件獲得</div>
+    </div>
+    <div>
+      <img src="images/webinar_mar_copyright.png" alt="AI時代の著作権">
+      <div class="img-caption">3/16 AI時代の著作権<br>文化庁の基準を60分で</div>
+    </div>
+    <div>
+      <img src="images/webinar_mar_claude_code.png" alt="Claude Code完全攻略">
+      <div class="img-caption">3/18 Claude Code完全攻略<br>一般無料公開</div>
+    </div>
+  </div>
+
+
+  <!-- ── 合宿 ── -->
+  <div class="team-divider"></div>
+  <div class="team-header accent">
+    <h3>2. 合宿チーム<span class="pm">（松本さん）</span></h3>
+  </div>
+
+  <div class="purpose">
+    <strong>目的：</strong>週末の集中学習体験を通じて、成果創出・行動変容・挑戦意欲への着火/再燃を実現し、人生を変える<strong>"ブレイクスルー"</strong>の場を提供する
+  </div>
+
+  <!-- 2月 -->
+  <div class="phase-label"><span class="material-icons-round" style="font-size:16px;">emoji_events</span> 2月の実績</div>
+
+  <div class="items">
+    <div class="item">
+      <div class="n" style="background:var(--accent);">★</div>
+      <div class="body">
+        <div class="title">2つ会場同時に講座を開催するリアル合宿を実施</div>
+        <div class="desc">新たな運営形態にチャレンジ。規模拡大と体験の質の両立を実現。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="num">4.52</div>
+      <div class="label">案件獲得特化 満足度平均</div>
+    </div>
+    <div class="stat">
+      <div class="num">4.37</div>
+      <div class="label">クライアントワーク強化 満足度平均</div>
+    </div>
+  </div>
+
+  <!-- 3月 -->
+  <div class="phase-label mar"><span class="material-icons-round" style="font-size:16px;">local_fire_department</span> 3月の取り組み</div>
+
+  <p style="font-size:14px; color:var(--gray); margin-bottom:12px;">
+    準備期間を経て、今月より<strong style="color:var(--dark);">月に4回開催</strong>を実施！
+  </p>
+
+  <div class="highlight-box">
+    <h4><span class="material-icons-round">local_fire_department</span> 3/7 AI副業スタート合宿 — 過去最高の成果</h4>
+
+    <div class="stats">
+      <div class="stat hero-stat">
+        <div class="num">80%<span class="unit">以上</span></div>
+        <div class="label">参加者の案件応募率<br>（過去最高）</div>
+      </div>
+      <div class="stat">
+        <div class="num">4.8<span class="unit">/5.0</span></div>
+        <div class="label">講師の進め方評価</div>
+      </div>
+    </div>
+
+    <div class="quote">
+      「一人では数ヶ月悩んでいたことが数時間で解決した」
+    </div>
+
+    <p style="font-size:13px; color:var(--gray); margin-top:8px;">
+      アンケート満足度が非常に高く、合宿の「行動に直結する」価値が証明された結果。
+    </p>
+  </div>
+
+</div>
+
+
+<!-- ============================================================ -->
+<!-- ===== 来月に向けた取り組み ===== -->
+<!-- ============================================================ -->
+<div class="section">
+  <div class="section-title">
+    <span class="material-icons-round">trending_up</span>
+    来月に向けた取り組み
+  </div>
+
+  <div class="team-header">
+    <h3>アクティブリテンションチーム</h3>
+  </div>
+  <div class="next-box">
+    <ul>
+      <li><strong>ローカルリテンション：</strong>4月の大規模サテライト（39県→47都道府県を目指す）。ゆるっと作業会の月38県開催を推進</li>
+      <li><strong>Discord：</strong>アンケート結果に基づくチャンネル改修の実装。「行動が生まれる場所」への進化を加速</li>
+      <li><strong>AI人材サポート：</strong>成果報告PJの具体設計を完了し運用フェーズへ。効率化PJのプロトタイプ検証を継続</li>
+    </ul>
+  </div>
+
+  <div class="team-header accent">
+    <h3>オンラインイベントチーム</h3>
+  </div>
+  <div class="next-box">
+    <ul>
+      <li><strong>ウェビナー：</strong>Xライブ × YouTubeの同時配信を拡大。外部公開ウェビナーによる新規流入の最大化</li>
+      <li><strong>合宿：</strong>月4回開催の定着。3/7の成功モデルを横展開し、参加者の案件応募率をさらに高める</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- /.container -->
+
+<div class="footer">
+  SHIFT AI コミュニティ事業本部 サクセスソリューション部｜2026年3月 マネージャーサミット資料<br>
+  Crafted by LPビルダーくん — 現場工房
+</div>
+
+</body>
+</html>
