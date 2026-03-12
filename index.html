@@ -9,15 +9,15 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 <style>
   :root {
-    --primary: #e8706a;
-    --primary-light: #fef3f2;
-    --accent: #7ec8c8;
-    --accent-light: #f0f7f7;
-    --purple: #c4a6d6;
-    --purple-light: #f5f0fa;
-    --dark: #1a1a1a;
+    --primary: #EC0C66;
+    --primary-light: #fdf2f6;
+    --accent: #6D3C9B;
+    --accent-light: #f3eef9;
+    --purple: #6D3C9B;
+    --purple-light: #f3eef9;
+    --dark: #333030;
     --gray: #666;
-    --light-gray: #f7f7fa;
+    --light-gray: #fbfbfb;
     --border: #e8e8e8;
     --white: #ffffff;
     --shadow: 0 2px 16px rgba(0,0,0,0.06);
@@ -39,7 +39,7 @@
 
   /* ===== HERO ===== */
   .hero {
-    background: linear-gradient(135deg, #e8706a 0%, #c4a6d6 40%, #7ec8c8 100%);
+    background: linear-gradient(135deg, #EC0C66 0%, #6D3C9B 100%);
     padding: 72px 48px 56px;
     color: var(--white);
     position: relative;
@@ -100,7 +100,7 @@
     content: '';
     flex: 1;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary), transparent);
+    background: linear-gradient(90deg, #EC0C66, transparent);
     border-radius: 2px;
     margin-left: 8px;
   }
@@ -165,7 +165,7 @@
     line-height: 1.4;
   }
   .stat.hero-stat {
-    background: linear-gradient(135deg, var(--primary), var(--purple));
+    background: linear-gradient(135deg, #EC0C66, #6D3C9B);
     color: var(--white);
   }
   .stat.hero-stat .num, .stat.hero-stat .label { color: var(--white); }
@@ -234,7 +234,7 @@
 
   /* ===== HIGHLIGHT BOX ===== */
   .highlight-box {
-    background: linear-gradient(135deg, var(--primary-light), var(--purple-light));
+    background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
     border-radius: var(--radius);
     padding: 28px;
     margin: 20px 0;
@@ -251,8 +251,8 @@
 
   /* ===== QUOTE ===== */
   .quote {
-    background: var(--accent-light);
-    border-left: 4px solid var(--accent);
+    background: var(--purple-light);
+    border-left: 4px solid var(--purple);
     padding: 14px 20px;
     margin: 12px 0;
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
@@ -315,7 +315,7 @@
     margin: 32px 0 16px;
   }
   .phase-label.mar {
-    background: var(--accent);
+    background: var(--purple);
   }
 
   /* ===== DIVIDER ===== */
@@ -745,7 +745,7 @@
 
   <div class="items">
     <div class="item">
-      <div class="n" style="background:var(--accent);">★</div>
+      <div class="n" style="background:var(--purple);">★</div>
       <div class="body">
         <div class="title">2つ会場同時に講座を開催するリアル合宿を実施</div>
         <div class="desc">新たな運営形態にチャレンジ。規模拡大と体験の質の両立を実現。</div>
