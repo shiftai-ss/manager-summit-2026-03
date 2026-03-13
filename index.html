@@ -142,11 +142,30 @@
   }
 
   /* Hero Stats */
+  .hero-stats-heading {
+    margin-top: 36px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+  }
+  .hero-stats-heading::before,
+  .hero-stats-heading::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  }
   .hero-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
-    margin-top: 12px;
+    margin-top: 0;
   }
   .hero-stat-card {
     background: rgba(255,255,255,0.06);
@@ -734,6 +753,7 @@
     <h1>サクセスソリューション部</h1>
     <div class="badge">2026年 2月実績 / 3月の取り組み｜マネージャーサミット</div>
 
+    <div class="hero-stats-heading fade-up">2月の主要ハイライト</div>
     <div class="hero-stats">
       <div class="hero-stat-card fade-up delay-1">
         <div class="num"><span class="count-up" data-target="56">0</span><span class="unit">件</span></div>
