@@ -5,41 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>サクセスソリューション部｜2026年3月 マネージャーサミット</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 <style>
   :root {
     --brand: #a51e6d;
+    --brand-light: #d94a9a;
     --brand-dark: #7a1550;
     --purple: #6D3C9B;
-    --dark: #1e1e2e;
-    --text: #333030;
-    --gray: #666;
+    --purple-light: #9b6dc8;
+    --dark: #0f0f1a;
+    --dark-card: #1a1a2e;
+    --text: #2d2d3a;
+    --gray: #6b6b80;
     --light: #f8f8fc;
     --white: #ffffff;
     --border: #e8e8ee;
-    --shadow: 0 4px 24px rgba(0,0,0,0.06);
-    --shadow-lg: 0 12px 40px rgba(0,0,0,0.10);
     --radius: 20px;
     --radius-sm: 12px;
 
-    /* チーム固有カラー */
+    /* Team colors */
     --team-local: #e67e22;
+    --team-local-bg: #fef6ee;
     --team-discord: #5865F2;
+    --team-discord-bg: #eef0fe;
     --team-talent: #16a085;
+    --team-talent-bg: #eef9f6;
     --team-webinar: #c0392b;
+    --team-webinar-bg: #fdf0ef;
     --team-bootcamp: #2980b9;
+    --team-bootcamp-bg: #edf4fb;
+    --team-zemi: #8e44ad;
+    --team-zemi-bg: #f5eef8;
+
+    /* Section backgrounds */
+    --section-active: #fdf2f7;
+    --section-online: #f3f0fa;
+    --section-zemi: #fffbf0;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
     color: var(--text);
     background: var(--white);
     line-height: 1.8;
     font-size: 15px;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   /* ===== SCROLL PROGRESS ===== */
@@ -48,77 +62,147 @@
     top: 0;
     left: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--brand), var(--purple));
+    background: linear-gradient(90deg, var(--brand), var(--purple), var(--brand-light));
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
     z-index: 1000;
     transition: width 0.1s;
+  }
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
 
   /* ===== HERO ===== */
   .hero {
     background: var(--dark);
-    padding: 100px 48px 80px;
+    padding: 80px 48px 60px;
     color: var(--white);
     position: relative;
     overflow: hidden;
-    min-height: 340px;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
   }
   .hero::before {
     content: '';
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 80% 60% at 20% 50%, rgba(165,30,109,0.5) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 80% at 80% 30%, rgba(109,60,155,0.4) 0%, transparent 70%),
-      radial-gradient(circle at 50% 120%, rgba(165,30,109,0.2) 0%, transparent 50%);
+      radial-gradient(ellipse 80% 60% at 15% 50%, rgba(165,30,109,0.6) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 70% at 85% 30%, rgba(109,60,155,0.5) 0%, transparent 60%),
+      radial-gradient(circle at 50% 120%, rgba(165,30,109,0.3) 0%, transparent 40%);
   }
-  .hero::after {
-    content: '';
+  /* Floating geometric shapes */
+  .hero-shape {
     position: absolute;
-    top: -100px; right: -100px;
-    width: 400px; height: 400px;
-    border: 1px solid rgba(255,255,255,0.06);
     border-radius: 50%;
+    opacity: 0.06;
+    border: 2px solid rgba(255,255,255,0.3);
   }
-  .hero .container { position: relative; z-index: 1; }
+  .hero-shape:nth-child(1) { width: 300px; height: 300px; top: -80px; right: -60px; animation: float 8s ease-in-out infinite; }
+  .hero-shape:nth-child(2) { width: 200px; height: 200px; bottom: -40px; left: 10%; animation: float 6s ease-in-out infinite reverse; }
+  .hero-shape:nth-child(3) { width: 140px; height: 140px; top: 30%; right: 15%; animation: float 10s ease-in-out infinite; border-radius: 30%; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+
+  .hero .container { position: relative; z-index: 1; width: 100%; }
   .hero .dept-label {
     font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.2em;
-    opacity: 0.7;
+    letter-spacing: 0.25em;
+    opacity: 0.6;
     text-transform: uppercase;
+    margin-bottom: 8px;
   }
   .hero h1 {
-    font-size: 42px;
+    font-size: 48px;
     font-weight: 900;
     letter-spacing: 0.02em;
-    margin: 8px 0 20px;
-    line-height: 1.3;
+    margin: 0 0 12px;
+    line-height: 1.2;
     word-break: keep-all;
+    background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   .hero .badge {
     display: inline-block;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.15);
-    padding: 8px 24px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 8px 28px;
     border-radius: 100px;
     font-size: 14px;
     font-weight: 500;
+    margin-bottom: 40px;
   }
-  .hero .hero-line {
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--brand), var(--purple));
-    border-radius: 2px;
-    margin-bottom: 16px;
+
+  /* Hero Stats */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 12px;
+  }
+  .hero-stat-card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+  }
+  .hero-stat-card:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-4px);
+  }
+  .hero-stat-card .num {
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--white);
+  }
+  .hero-stat-card .num .unit { font-size: 16px; font-weight: 600; opacity: 0.7; }
+  .hero-stat-card .label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 6px;
+    line-height: 1.4;
   }
 
   /* ===== CONTAINER ===== */
   .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
 
-  /* ===== TEAM BANNER (フルワイドの大セクション区切り) ===== */
+  /* ===== SECTION ===== */
+  .section { padding: 56px 0; }
+
+  /* ===== SECTION BACKGROUNDS (Team differentiation) ===== */
+  .section-active-retention {
+    background: var(--section-active);
+    position: relative;
+  }
+  .section-online-event {
+    background: var(--section-online);
+    position: relative;
+  }
+  .section-zemi {
+    background: var(--section-zemi);
+    position: relative;
+  }
+
+  /* ===== WAVE DIVIDER ===== */
+  .wave-divider { height: 60px; overflow: hidden; }
+  .wave-divider svg { display: block; width: 100%; height: 100%; }
+
+  /* ===== TEAM BANNER ===== */
   .team-banner {
-    padding: 40px 0;
+    padding: 56px 0 48px;
     color: var(--white);
     position: relative;
     overflow: hidden;
@@ -127,49 +211,59 @@
     content: '';
     position: absolute;
     inset: 0;
-    opacity: 0.12;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.08;
   }
   .team-banner.active-retention {
-    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 50%, #5a1040 100%);
+  }
+  .team-banner.active-retention::before {
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='2' fill='%23fff'/%3E%3C/svg%3E");
   }
   .team-banner.online-event {
-    background: linear-gradient(135deg, var(--purple) 0%, #4a2870 100%);
+    background: linear-gradient(135deg, var(--purple) 0%, #4a2870 50%, #2d1850 100%);
+  }
+  .team-banner.online-event::before {
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='18' y='18' width='4' height='4' rx='1' fill='%23fff'/%3E%3C/svg%3E");
   }
   .team-banner .container { position: relative; z-index: 1; }
   .team-banner h2 {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 900;
     display: flex;
     align-items: center;
     gap: 12px;
   }
-  .team-banner h2 .material-icons-round { font-size: 32px; }
+  .team-banner h2 .material-icons-round { font-size: 36px; opacity: 0.9; }
   .team-banner .pm-label {
     font-size: 14px;
-    opacity: 0.8;
-    margin-top: 4px;
+    opacity: 0.7;
+    margin-top: 6px;
     font-weight: 400;
   }
-
-  /* ===== SECTION ===== */
-  .section { padding: 48px 0; }
+  .team-banner .team-mission {
+    font-size: 15px;
+    opacity: 0.85;
+    margin-top: 12px;
+    max-width: 640px;
+    line-height: 1.7;
+  }
 
   /* ===== DEPT INTRO ===== */
   .dept-intro {
-    background: var(--light);
+    background: var(--white);
     border-radius: var(--radius);
-    padding: 32px;
+    padding: 36px;
     font-size: 14px;
-    line-height: 1.9;
+    line-height: 2;
     color: #555;
     border: 1px solid var(--border);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.03);
   }
   .dept-intro strong { color: var(--text); }
   .section-label {
     font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     color: var(--brand);
     margin-bottom: 8px;
     display: flex;
@@ -178,69 +272,62 @@
   }
   .section-label .material-icons-round { font-size: 18px; }
   .section-title-main {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 900;
     margin-bottom: 20px;
     color: var(--text);
   }
 
-  /* ===== TEAM CARD (サブチームをカードで囲む) ===== */
+  /* ===== TEAM CARD ===== */
   .team-card {
     background: var(--white);
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+    padding: 36px;
     margin: 28px 0;
-    border-top: 4px solid var(--brand);
+    border-left: 5px solid var(--brand);
     position: relative;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .team-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 120px;
-    height: 120px;
-    border-radius: 0 0 0 120px;
-    opacity: 0.04;
+  .team-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
   }
-  .team-card.local { border-top-color: var(--team-local); }
-  .team-card.local::before { background: var(--team-local); }
-  .team-card.discord { border-top-color: var(--team-discord); }
-  .team-card.discord::before { background: var(--team-discord); }
-  .team-card.talent { border-top-color: var(--team-talent); }
-  .team-card.talent::before { background: var(--team-talent); }
-  .team-card.webinar { border-top-color: var(--team-webinar); }
-  .team-card.webinar::before { background: var(--team-webinar); }
-  .team-card.bootcamp { border-top-color: var(--team-bootcamp); }
-  .team-card.bootcamp::before { background: var(--team-bootcamp); }
+  .team-card.local { border-left-color: var(--team-local); }
+  .team-card.discord { border-left-color: var(--team-discord); }
+  .team-card.talent { border-left-color: var(--team-talent); }
+  .team-card.webinar { border-left-color: var(--team-webinar); }
+  .team-card.bootcamp { border-left-color: var(--team-bootcamp); }
+  .team-card.zemi { border-left-color: var(--team-zemi); }
 
   .team-card-header {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
   .team-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
     flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
-  .team-icon .material-icons-round { font-size: 24px; }
-  .team-icon.local { background: var(--team-local); }
-  .team-icon.discord { background: var(--team-discord); }
-  .team-icon.talent { background: var(--team-talent); }
-  .team-icon.webinar { background: var(--team-webinar); }
-  .team-icon.bootcamp { background: var(--team-bootcamp); }
+  .team-icon .material-icons-round { font-size: 26px; }
+  .team-icon.local { background: linear-gradient(135deg, var(--team-local), #d35400); }
+  .team-icon.discord { background: linear-gradient(135deg, var(--team-discord), #4752c4); }
+  .team-icon.talent { background: linear-gradient(135deg, var(--team-talent), #0e6655); }
+  .team-icon.webinar { background: linear-gradient(135deg, var(--team-webinar), #922b21); }
+  .team-icon.bootcamp { background: linear-gradient(135deg, var(--team-bootcamp), #1a5276); }
+  .team-icon.zemi { background: linear-gradient(135deg, var(--team-zemi), #6c3483); }
 
   .team-card-header h3 {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 900;
     line-height: 1.3;
   }
@@ -253,10 +340,10 @@
 
   /* ===== PURPOSE ===== */
   .purpose {
-    background: #fffbf5;
-    border-left: 4px solid #f0a030;
+    background: #fafafa;
+    border-left: 4px solid #e0c060;
     padding: 14px 20px;
-    margin: 0 0 20px;
+    margin: 0 0 24px;
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     font-size: 13px;
     color: #555;
@@ -269,6 +356,7 @@
   .team-card.talent .purpose .hl { color: var(--team-talent); }
   .team-card.webinar .purpose .hl { color: var(--team-webinar); }
   .team-card.bootcamp .purpose .hl { color: var(--team-bootcamp); }
+  .team-card.zemi .purpose .hl { color: var(--team-zemi); }
 
   /* ===== PHASE LABEL ===== */
   .phase-label {
@@ -277,9 +365,9 @@
     gap: 6px;
     font-size: 13px;
     font-weight: 700;
-    padding: 6px 16px;
+    padding: 6px 18px;
     border-radius: 100px;
-    margin: 24px 0 14px;
+    margin: 28px 0 14px;
     color: var(--white);
   }
   .phase-label .material-icons-round { font-size: 16px; }
@@ -294,14 +382,17 @@
     margin: 14px 0 18px;
   }
   .stat {
-    background: var(--light);
+    background: var(--white);
     border-radius: var(--radius-sm);
-    padding: 20px 16px;
+    padding: 22px 16px;
     text-align: center;
     border: 1px solid var(--border);
+    transition: transform 0.2s;
   }
+  .stat:hover { transform: scale(1.02); }
   .stat .num {
-    font-size: 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 34px;
     font-weight: 900;
     line-height: 1.2;
   }
@@ -312,25 +403,27 @@
     margin-top: 4px;
     line-height: 1.4;
   }
-  /* チーム別の数字カラー */
   .team-card.local .stat .num { color: var(--team-local); }
   .team-card.discord .stat .num { color: var(--team-discord); }
   .team-card.talent .stat .num { color: var(--team-talent); }
   .team-card.webinar .stat .num { color: var(--team-webinar); }
   .team-card.bootcamp .stat .num { color: var(--team-bootcamp); }
+  .team-card.zemi .stat .num { color: var(--team-zemi); }
 
   .stat.hero-stat {
     color: var(--white);
     border: none;
+    position: relative;
+    overflow: hidden;
   }
-  .stat.hero-stat .num, .stat.hero-stat .label { color: var(--white); }
+  .stat.hero-stat .num, .stat.hero-stat .label { color: var(--white); position: relative; z-index: 1; }
   .stat.hero-stat .label { opacity: 0.9; }
-
   .team-card.local .stat.hero-stat { background: linear-gradient(135deg, var(--team-local), #d35400); }
   .team-card.discord .stat.hero-stat { background: linear-gradient(135deg, var(--team-discord), #4752c4); }
   .team-card.talent .stat.hero-stat { background: linear-gradient(135deg, var(--team-talent), #0e6655); }
   .team-card.webinar .stat.hero-stat { background: linear-gradient(135deg, var(--team-webinar), #922b21); }
   .team-card.bootcamp .stat.hero-stat { background: linear-gradient(135deg, var(--team-bootcamp), #1a5276); }
+  .team-card.zemi .stat.hero-stat { background: linear-gradient(135deg, var(--team-zemi), #6c3483); }
 
   .change {
     display: inline-block;
@@ -338,7 +431,7 @@
     color: #2e7d32;
     font-size: 12px;
     font-weight: 700;
-    padding: 2px 8px;
+    padding: 2px 10px;
     border-radius: 10px;
   }
 
@@ -370,6 +463,7 @@
   .team-card.talent .item .n { background: var(--team-talent); }
   .team-card.webinar .item .n { background: var(--team-webinar); }
   .team-card.bootcamp .item .n { background: var(--team-bootcamp); }
+  .team-card.zemi .item .n { background: var(--team-zemi); }
   .item .body { flex: 1; }
   .item .title { font-weight: 700; font-size: 14px; }
   .item .desc { font-size: 13px; color: var(--gray); line-height: 1.6; margin-top: 2px; }
@@ -382,11 +476,17 @@
   }
   .img-grid.cols-2 { grid-template-columns: 1fr 1fr; }
   .img-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .img-grid.cols-4 { grid-template-columns: 1fr 1fr; }
   .img-grid img, .img-single img {
     width: 100%;
     border-radius: var(--radius-sm);
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     display: block;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .img-grid img:hover, .img-single img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
   }
   .img-single { margin: 16px 0; }
   .img-caption {
@@ -401,6 +501,8 @@
     border-radius: var(--radius);
     padding: 28px;
     margin: 20px 0;
+    position: relative;
+    overflow: hidden;
   }
   .team-card.bootcamp .highlight-box {
     background: linear-gradient(135deg, #eaf2f8, #ebf5fb);
@@ -418,23 +520,84 @@
 
   /* ===== QUOTE ===== */
   .quote {
-    background: var(--light);
+    background: rgba(255,255,255,0.7);
     border-left: 4px solid var(--purple);
-    padding: 14px 20px;
-    margin: 12px 0;
+    padding: 16px 24px;
+    margin: 16px 0;
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     font-style: italic;
     color: #555;
     font-size: 14px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ===== TIMELINE (for ゼミ) ===== */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+    margin: 20px 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--team-zemi), rgba(142,68,173,0.2));
+    border-radius: 2px;
+  }
+  .timeline-item {
+    position: relative;
+    padding: 12px 0;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -25px;
+    top: 18px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--team-zemi);
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 3px rgba(142,68,173,0.2);
+  }
+  .timeline-date {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--team-zemi);
+    margin-bottom: 2px;
+  }
+  .timeline-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .timeline-desc {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.5;
   }
 
   /* ===== NEXT ACTIONS ===== */
   .next-section {
     background: var(--dark);
     color: var(--white);
-    padding: 56px 0;
+    padding: 64px 0;
+    position: relative;
+    overflow: hidden;
   }
-  .next-section .section-label { color: rgba(255,255,255,0.5); }
+  .next-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 80%, rgba(165,30,109,0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(109,60,155,0.15) 0%, transparent 50%);
+  }
+  .next-section .container { position: relative; z-index: 1; }
+  .next-section .section-label { color: rgba(255,255,255,0.4); }
   .next-section .section-title-main { color: var(--white); }
   .next-grid {
     display: grid;
@@ -443,11 +606,16 @@
     margin-top: 24px;
   }
   .next-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: var(--radius);
     padding: 28px;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s, background 0.3s;
+  }
+  .next-card:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-3px);
   }
   .next-card h4 {
     font-size: 16px;
@@ -487,47 +655,81 @@
   .footer {
     text-align: center;
     padding: 48px 32px;
-    color: #999;
+    color: rgba(255,255,255,0.4);
     font-size: 11px;
     background: var(--dark);
     border-top: 1px solid rgba(255,255,255,0.05);
   }
 
-  /* ===== WAVE DIVIDER ===== */
-  .wave-divider {
-    height: 60px;
-    overflow: hidden;
-  }
-  .wave-divider svg { display: block; width: 100%; height: 100%; }
-
-  /* ===== SCROLL ANIMATION ===== */
+  /* ===== SCROLL ANIMATIONS ===== */
   .fade-up {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
   }
-  .fade-up.visible {
+  .fade-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible, .fade-left.visible, .fade-right.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(0);
+  }
+  /* Stagger delays */
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.2s; }
+  .delay-3 { transition-delay: 0.3s; }
+
+  /* ===== SPECIAL BOX ===== */
+  .special-box {
+    background: linear-gradient(135deg, #fef9f0, #fff5e6);
+    border: 1px solid #f0d090;
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-top: 16px;
+  }
+  .special-box h4 {
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .special-box p {
+    font-size: 13px;
+    color: var(--gray);
+    margin-top: 6px;
   }
 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 640px) {
-    .hero { padding: 64px 24px 48px; }
-    .hero h1 { font-size: 28px; }
+    .hero { padding: 64px 24px 48px; min-height: 400px; }
+    .hero h1 { font-size: 32px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .hero-stat-card .num { font-size: 28px; }
     .container { padding: 0 20px; }
     .stats { grid-template-columns: 1fr 1fr; }
+    .stat .num { font-size: 26px; }
     .img-grid.cols-2, .img-grid.cols-3 { grid-template-columns: 1fr; }
-    .stat .num { font-size: 24px; }
+    .img-grid.cols-4 { grid-template-columns: 1fr; }
     .team-card { padding: 24px 20px; }
-    .team-banner h2 { font-size: 22px; }
+    .team-banner h2 { font-size: 24px; }
+    .team-banner { padding: 40px 0 32px; }
     .next-grid { grid-template-columns: 1fr; }
+    .section-title-main { font-size: 22px; }
   }
 
   @media print {
-    .hero { padding: 32px; }
+    .hero { padding: 32px; min-height: auto; }
     .team-card { page-break-inside: avoid; }
     .scroll-progress { display: none; }
+    .fade-up, .fade-left, .fade-right { opacity: 1; transform: none; }
   }
 </style>
 </head>
@@ -538,11 +740,32 @@
 
 <!-- ===== HERO ===== -->
 <div class="hero">
+  <div class="hero-shape"></div>
+  <div class="hero-shape"></div>
+  <div class="hero-shape"></div>
   <div class="container">
-    <div class="hero-line"></div>
-    <div class="dept-label">SHIFT AI コミュニティ事業本部</div>
+    <div class="dept-label">SHIFT AI Community Division</div>
     <h1>サクセスソリューション部</h1>
-    <div class="badge">2026年 2月実績 〜 3月の取り組み｜マネージャーサミット</div>
+    <div class="badge">2026年 2月実績 / 3月の取り組み｜マネージャーサミット</div>
+
+    <div class="hero-stats">
+      <div class="hero-stat-card fade-up delay-1">
+        <div class="num"><span class="count-up" data-target="56">0</span><span class="unit">件</span></div>
+        <div class="label">2月ウェビナー実施</div>
+      </div>
+      <div class="hero-stat-card fade-up delay-2">
+        <div class="num"><span class="count-up" data-target="6035">0</span><span class="unit">名</span></div>
+        <div class="label">Discord行動会員</div>
+      </div>
+      <div class="hero-stat-card fade-up delay-3">
+        <div class="num"><span class="count-up" data-target="80">0</span><span class="unit">%+</span></div>
+        <div class="label">合宿 案件応募率</div>
+      </div>
+      <div class="hero-stat-card fade-up delay-3">
+        <div class="num"><span class="count-up" data-target="39">0</span><span class="unit">県</span></div>
+        <div class="label">サテライト開催予定</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -562,7 +785,7 @@
       成果に直結する体験設計を行っています。<br><br>
       チーム全体で<strong>「成果にコミットする」</strong>という姿勢を大切にし、
       課題を解決するための最適な手段（＝ソリューション）を常に考え続けています。
-      チームは大きく分けて<strong>4チーム</strong>で、全会員様にとって成果の出る企画を検討し、実行しています。
+      チームは大きく分けて<strong>4チーム</strong>で構成されています。
     </div>
   </div>
 </div>
@@ -571,17 +794,25 @@
 <!-- ============================================================ -->
 <!-- ===== アクティブリテンションチーム ===== -->
 <!-- ============================================================ -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="var(--section-active)"/>
+  </svg>
+</div>
+
+<div class="section-active-retention">
 <div class="team-banner active-retention">
   <div class="container">
     <h2><span class="material-icons-round">shield</span> アクティブリテンションチーム</h2>
     <div class="pm-label">統括PM：浪方さん</div>
+    <div class="team-mission">会員の「行動量」と「定着率」を高め、退会率を抑制する。地方支援・Discord・AI人材サポートの3軸で全方位に展開。</div>
   </div>
 </div>
 
 <div class="container">
 
   <!-- ── ローカルリテンション ── -->
-  <div class="team-card local fade-up">
+  <div class="team-card local fade-left">
     <div class="team-card-header">
       <div class="team-icon local"><span class="material-icons-round">location_on</span></div>
       <div>
@@ -632,11 +863,11 @@
       </div>
     </div>
 
-    <div style="background:#fef9f0; border-radius:var(--radius-sm); padding:16px 20px; margin-top:16px;">
-      <h4 style="font-size:14px; font-weight:700; display:flex; align-items:center; gap:6px; color:var(--team-local);">
+    <div class="special-box">
+      <h4 style="color:var(--team-local);">
         <span class="material-icons-round" style="font-size:18px;">star</span> 特別企画
       </h4>
-      <p style="font-size:13px; color:var(--gray); margin-top:6px;">
+      <p>
         <strong>4/10「ゆるっと作業会 in 北海道 けいたろうさん特別ver」</strong>開催予定<br>
         北海道会員様が熱望していた独自イベントが、けいたろうさんイベントで実現（主催者確保済み）
       </p>
@@ -645,7 +876,7 @@
 
 
   <!-- ── Discord ── -->
-  <div class="team-card discord fade-up">
+  <div class="team-card discord fade-right">
     <div class="team-card-header">
       <div class="team-icon discord"><span class="material-icons-round">forum</span></div>
       <div>
@@ -662,7 +893,7 @@
 
     <div class="stats">
       <div class="stat hero-stat">
-        <div class="num">6,035<span class="unit">名</span></div>
+        <div class="num"><span class="count-up" data-target="6035">0</span><span class="unit">名</span></div>
         <div class="label">行動している会員様<br>（発言/リアクション等）</div>
       </div>
       <div class="stat">
@@ -670,7 +901,7 @@
         <div class="label">前月比</div>
       </div>
       <div class="stat hero-stat">
-        <div class="num">1,026<span class="unit">名</span></div>
+        <div class="num"><span class="count-up" data-target="1026">0</span><span class="unit">名</span></div>
         <div class="label">月3回以上発言<br>（行動継続会員）</div>
       </div>
       <div class="stat">
@@ -760,7 +991,7 @@
 
 
   <!-- ── AI人材サポート ── -->
-  <div class="team-card talent fade-up">
+  <div class="team-card talent fade-left">
     <div class="team-card-header">
       <div class="team-icon talent"><span class="material-icons-round">psychology</span></div>
       <div>
@@ -852,22 +1083,31 @@
   </div>
 
 </div>
+</div><!-- end section-active-retention -->
 
 
 <!-- ============================================================ -->
 <!-- ===== オンラインイベントチーム ===== -->
 <!-- ============================================================ -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="var(--section-online)"/>
+  </svg>
+</div>
+
+<div class="section-online-event">
 <div class="team-banner online-event">
   <div class="container">
     <h2><span class="material-icons-round">play_circle</span> オンラインイベントチーム</h2>
     <div class="pm-label">統括PM：田松さん</div>
+    <div class="team-mission">ウェビナー・合宿・ゼミを通じて、学びが実務・収益につながる「成果創出型の体験」を提供。</div>
   </div>
 </div>
 
 <div class="container">
 
   <!-- ── ウェビナー ── -->
-  <div class="team-card webinar fade-up">
+  <div class="team-card webinar fade-right">
     <div class="team-card-header">
       <div class="team-icon webinar"><span class="material-icons-round">videocam</span></div>
       <div>
@@ -884,7 +1124,7 @@
 
     <div class="stats">
       <div class="stat hero-stat">
-        <div class="num">56<span class="unit">件</span></div>
+        <div class="num"><span class="count-up" data-target="56">0</span><span class="unit">件</span></div>
         <div class="label">実施件数</div>
       </div>
       <div class="stat">
@@ -911,7 +1151,7 @@
       <div class="item">
         <div class="n">2</div>
         <div class="body">
-          <div class="title">Xライブ × YouTubeライブの同時配信</div>
+          <div class="title">Xライブ x YouTubeライブの同時配信</div>
           <div class="desc">3月は3ウェビナーで同時配信を予定。リーチの最大化を図る。</div>
         </div>
       </div>
@@ -936,7 +1176,7 @@
 
 
   <!-- ── 合宿 ── -->
-  <div class="team-card bootcamp fade-up">
+  <div class="team-card bootcamp fade-left">
     <div class="team-card-header">
       <div class="team-icon bootcamp"><span class="material-icons-round">local_fire_department</span></div>
       <div>
@@ -953,7 +1193,7 @@
 
     <div class="items">
       <div class="item">
-        <div class="n" style="font-size:16px;">★</div>
+        <div class="n" style="font-size:16px;">&#9733;</div>
         <div class="body">
           <div class="title">2つ会場同時に講座を開催するリアル合宿を実施</div>
           <div class="desc">新たな運営形態にチャレンジ。規模拡大と体験の質の両立を実現。</div>
@@ -1002,22 +1242,155 @@
     </div>
   </div>
 
+
+  <!-- ── 実践アウトプットゼミ ── -->
+  <div class="team-card zemi fade-right">
+    <div class="team-card-header">
+      <div class="team-icon zemi"><span class="material-icons-round">school</span></div>
+      <div>
+        <h3>実践アウトプットゼミ</h3>
+        <span class="pm">PM：宍戸さん</span>
+      </div>
+    </div>
+
+    <div class="purpose">
+      <strong>目的：</strong>各専門領域の講師と共に、受講生が<span class="hl">「学ぶ」から「動く」へ</span>と移行し、実際のアウトプット・成果獲得まで伴走する実践型プログラム
+    </div>
+
+    <p style="font-size:14px; color:var(--gray); margin-bottom:4px;">
+      2月の基盤構築フェーズを経て、3月は各ゼミが「実践・アウトプット」へと本格移行。<br>
+      コミュニティ全体の熱量が上がっています。特にSNS運用代行やAIエージェント構築における<strong style="color:var(--text);">Discordでのアウトプットラッシュ</strong>は目覚ましい成果を上げています。
+    </p>
+
+    <div class="phase-label feb"><span class="material-icons-round">build</span> 2月：基盤構築・順次開講フェーズ</div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2/03</div>
+        <div class="timeline-title">マネタイズゼミ（椎葉ともこ講師）</div>
+        <div class="timeline-desc">収益化に向けたマインドセットと設計の開始</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2/11</div>
+        <div class="timeline-title">AI開発ゼミ（上田・昴澤講師）</div>
+        <div class="timeline-desc">技術的基盤の構築とプロトタイプ制作</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2/22</div>
+        <div class="timeline-title">SNS動画運用代行ゼミ（そら講師）</div>
+        <div class="timeline-desc">3月本格稼働。サポート講師7名体制でDiscordが活性化</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2/23</div>
+        <div class="timeline-title">エージェントゼミ Claude Code編（二本柳講師）</div>
+        <div class="timeline-desc">実力派エージェント構築に特化</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2/27</div>
+        <div class="timeline-title">KARABEE AIART LABORATORY（殻尾講師）</div>
+        <div class="timeline-desc">AI漫画家虎の穴 — クリエイティブ領域の先陣を切ってスタート</div>
+      </div>
+    </div>
+
+    <div class="phase-label mar"><span class="material-icons-round">whatshot</span> 3月：実践加速・アウトプットの嵐</div>
+
+    <p style="font-size:14px; color:var(--gray); margin-bottom:12px;">
+      デザイン・マンガ・アートといった表現領域が加わり、さらに「仕事獲得」という実利フェーズへ突入。
+    </p>
+
+    <div class="items">
+      <div class="item">
+        <div class="n">1</div>
+        <div class="body">
+          <div class="title">クリエイティブ・デザイン領域の深化</div>
+          <div class="desc">
+            デザインゼミ（3/2〜 川合講師）、AIマンガゼミの多角化（3/13〜 殻尾講師 二段構え）、HAKUSHIのAIアートラボ（3/13〜）が始動。
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">2</div>
+        <div class="body">
+          <div class="title">Discordでの圧倒的な活動量</div>
+          <div class="desc">
+            SNS運用代行ゼミでは、外部講師のそらさんと7名のサポート講師が常駐する専用チャンネルが大盛況。「毎週のセミナー・勉強会 → 即、宿題アウトプット」というサイクルが完全に定着。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote" style="border-left-color:var(--team-zemi);">
+      2月の「種まき」が、3月に入り「宿題アウトプット」という目に見える形となって花開いている。<br>
+      特にClaude Codeのような最新技術への対応や、講師・PM・サポート講師が三位一体となったDiscord運営が、参加率の高さに直結しています。
+    </div>
+
+    <h4 style="font-size:15px; font-weight:700; margin:24px 0 12px; color:var(--team-zemi); display:flex; align-items:center; gap:8px;">
+      <span class="material-icons-round" style="font-size:20px;">collections</span> 開講中のゼミ
+    </h4>
+    <div class="img-grid cols-4">
+      <div>
+        <img src="images/zemi_monetize.png" alt="マネタイズゼミ">
+        <div class="img-caption">マネタイズゼミ</div>
+      </div>
+      <div>
+        <img src="images/zemi_ai_dev.png" alt="AI開発ゼミ">
+        <div class="img-caption">AI開発ゼミ</div>
+      </div>
+      <div>
+        <img src="images/zemi_ai_manga.png" alt="AI漫画ゼミ">
+        <div class="img-caption">AI漫画ゼミ</div>
+      </div>
+      <div>
+        <img src="images/zemi_ai_art.png" alt="AIアートゼミ">
+        <div class="img-caption">AIアートラボ（HAKUSHI）</div>
+      </div>
+    </div>
+
+    <div class="phase-label mar"><span class="material-icons-round">date_range</span> 今後のロードマップ</div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">3/19</div>
+        <div class="timeline-title">AIディレクター 〜AI組織作り（佐藤誠一講師）</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">3/24</div>
+        <div class="timeline-title">仕事獲得ゼミ（黒山講師）</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">3/31</div>
+        <div class="timeline-title">商品開発ゼミ 〜ゼロから自分商品作り（タマキユウスケ講師）</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">4月〜</div>
+        <div class="timeline-title">業務AI化実践、AI人材力飛躍ゼミなどが順次スタート</div>
+      </div>
+    </div>
+  </div>
+
 </div>
+</div><!-- end section-online-event -->
 
 
 <!-- ============================================================ -->
 <!-- ===== 来月に向けた取り組み ===== -->
 <!-- ============================================================ -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="var(--dark)"/>
+  </svg>
+</div>
+
 <div class="next-section">
-  <div class="container fade-up">
-    <div class="section-label">
+  <div class="container">
+    <div class="section-label fade-up">
       <span class="material-icons-round">trending_up</span>
       NEXT
     </div>
-    <div class="section-title-main">来月に向けた取り組み</div>
+    <div class="section-title-main fade-up">来月に向けた取り組み</div>
 
     <div class="next-grid">
-      <div class="next-card">
+      <div class="next-card fade-up delay-1">
         <h4><div class="dot" style="background:var(--brand);"></div> アクティブリテンション</h4>
         <ul>
           <li><strong>ローカルリテンション：</strong>4月の大規模サテライト（39県→47都道府県を目指す）。ゆるっと作業会の月38県開催を推進</li>
@@ -1025,11 +1398,12 @@
           <li><strong>AI人材サポート：</strong>成果報告PJの具体設計を完了し運用フェーズへ。効率化PJのプロトタイプ検証を継続</li>
         </ul>
       </div>
-      <div class="next-card">
+      <div class="next-card fade-up delay-2">
         <h4><div class="dot" style="background:var(--purple);"></div> オンラインイベント</h4>
         <ul>
-          <li><strong>ウェビナー：</strong>Xライブ × YouTubeの同時配信を拡大。外部公開ウェビナーによる新規流入の最大化</li>
+          <li><strong>ウェビナー：</strong>Xライブ x YouTubeの同時配信を拡大。外部公開ウェビナーによる新規流入の最大化</li>
           <li><strong>合宿：</strong>月4回開催の定着。3/7の成功モデルを横展開し、参加者の案件応募率をさらに高める</li>
+          <li><strong>ゼミ：</strong>3月下旬〜4月に仕事獲得・商品開発・AI組織作りゼミが順次スタート。「技術」を「仕事・組織」へと変換するフェーズへ移行</li>
         </ul>
       </div>
     </div>
@@ -1040,7 +1414,7 @@
   SHIFT AI コミュニティ事業本部 サクセスソリューション部｜2026年3月 マネージャーサミット資料
 </div>
 
-<!-- ===== SCROLL ANIMATION & PROGRESS ===== -->
+<!-- ===== SCRIPTS ===== -->
 <script>
   // Scroll progress bar
   window.addEventListener('scroll', () => {
@@ -1049,7 +1423,7 @@
     document.getElementById('scrollProgress').style.width = w + '%';
   });
 
-  // Fade-up animation
+  // Intersection Observer for animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1059,7 +1433,31 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => observer.observe(el));
+
+  // Count-up animation
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-target'));
+        const duration = 1500;
+        const start = performance.now();
+
+        function update(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+          el.textContent = Math.round(target * eased).toLocaleString();
+          if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+        countObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.count-up').forEach(el => countObserver.observe(el));
 </script>
 
 </body>
