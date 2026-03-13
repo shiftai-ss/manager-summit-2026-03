@@ -330,6 +330,7 @@
   .team-card.webinar { border-left-color: var(--team-webinar); }
   .team-card.bootcamp { border-left-color: var(--team-bootcamp); }
   .team-card.zemi { border-left-color: var(--team-zemi); }
+  .team-card.pro { border-left-color: #16a085; }
 
   .team-card-header {
     display: flex;
@@ -355,6 +356,7 @@
   .team-icon.webinar { background: linear-gradient(135deg, var(--team-webinar), #922b21); }
   .team-icon.bootcamp { background: linear-gradient(135deg, var(--team-bootcamp), #1a5276); }
   .team-icon.zemi { background: linear-gradient(135deg, var(--team-zemi), #6c3483); }
+  .team-icon.pro { background: linear-gradient(135deg, #16a085, #0e7c64); }
 
   .team-card-header h3 {
     font-size: 21px;
@@ -387,6 +389,7 @@
   .team-card.webinar .purpose .hl { color: var(--team-webinar); }
   .team-card.bootcamp .purpose .hl { color: var(--team-bootcamp); }
   .team-card.zemi .purpose .hl { color: var(--team-zemi); }
+  .team-card.pro .purpose .hl { color: #16a085; }
 
   /* ===== PHASE LABEL ===== */
   .phase-label {
@@ -403,6 +406,7 @@
   .phase-label .material-icons-round { font-size: 16px; }
   .phase-label.feb { background: var(--brand); }
   .phase-label.mar { background: var(--purple); }
+  .phase-label.pro { background: #16a085; }
 
   /* ===== STATS ===== */
   .stats {
@@ -439,6 +443,7 @@
   .team-card.webinar .stat .num { color: var(--team-webinar); }
   .team-card.bootcamp .stat .num { color: var(--team-bootcamp); }
   .team-card.zemi .stat .num { color: var(--team-zemi); }
+  .team-card.pro .stat .num { color: #16a085; }
 
 
   .change {
@@ -480,6 +485,7 @@
   .team-card.webinar .item .n { background: var(--team-webinar); }
   .team-card.bootcamp .item .n { background: var(--team-bootcamp); }
   .team-card.zemi .item .n { background: var(--team-zemi); }
+  .team-card.pro .item .n { background: #16a085; }
   .item .body { flex: 1; }
   .item .title { font-weight: 700; font-size: 14px; }
   .item .desc { font-size: 13px; color: var(--gray); line-height: 1.6; margin-top: 2px; }
@@ -1408,160 +1414,394 @@
 </div>
 
 <div class="container">
-  <!-- Key Numbers -->
-  <div class="section fade-up">
-    <div class="section-label">
-      <span class="material-icons-round">analytics</span>
-      KEY NUMBERS
+
+  <!-- ── Key Numbers ── -->
+  <div class="team-card pro fade-up">
+    <div class="team-card-header">
+      <div class="team-icon pro"><span class="material-icons-round">analytics</span></div>
+      <div>
+        <h3>Key Numbers</h3>
+        <span class="pm">2026年2月8日〜3月13日（約5週間）の実績</span>
+      </div>
     </div>
-    <div class="stats-grid">
-      <div class="stat-card fade-up delay-1">
-        <div class="stat-number" style="color:#16a085;"><span class="count-up" data-target="30">0</span><span class="stat-unit">名</span></div>
-        <div class="stat-label">在籍会員（PRO 17 + PREMIUM 13）</div>
+    <div class="stats">
+      <div class="stat">
+        <div class="num"><span class="count-up" data-target="30">0</span><span class="unit">名</span></div>
+        <div class="label">在籍会員<br>（PRO 17 + PREMIUM 13）</div>
       </div>
-      <div class="stat-card fade-up delay-2">
-        <div class="stat-number" style="color:#16a085;"><span class="count-up" data-target="7">0</span><span class="stat-unit">日/週</span></div>
-        <div class="stat-label">実践FB会 開催</div>
+      <div class="stat">
+        <div class="num"><span class="count-up" data-target="7">0</span><span class="unit">日/週</span></div>
+        <div class="label">実践FB会 開催</div>
       </div>
-      <div class="stat-card fade-up delay-3">
-        <div class="stat-number" style="color:#16a085;"><span class="count-up" data-target="2200">0</span><span class="stat-unit">件超</span></div>
-        <div class="stat-label">Slackスレッド返信</div>
+      <div class="stat">
+        <div class="num"><span class="count-up" data-target="2200">0</span><span class="unit">件超</span></div>
+        <div class="label">Slackスレッド返信</div>
       </div>
-      <div class="stat-card fade-up delay-3">
-        <div class="stat-number" style="color:#16a085;"><span class="count-up" data-target="8">0</span><span class="stat-unit">種</span></div>
-        <div class="stat-label">運営管理テンプレート整備</div>
+      <div class="stat">
+        <div class="num"><span class="count-up" data-target="8">0</span><span class="unit">種</span></div>
+        <div class="label">運営管理テンプレート整備</div>
       </div>
     </div>
   </div>
 
-  <!-- Before → After -->
-  <div class="section fade-up">
-    <div class="section-label">
-      <span class="material-icons-round">compare_arrows</span>
-      BEFORE → AFTER（5週間の変化）
-    </div>
-    <div class="grid-2 fade-up">
-      <div class="card" style="border-left: 4px solid #e74c3c;">
-        <h4 style="color:#e74c3c;margin-bottom:12px;"><span class="material-icons-round" style="font-size:20px;vertical-align:middle;">warning</span> 2月8日時点</h4>
-        <ul style="list-style:none;padding:0;">
-          <li style="margin-bottom:8px;">会員管理は手作業。誰がどの段階にいるか把握しづらい</li>
-          <li style="margin-bottom:8px;">オンボーディングが体系化されていない</li>
-          <li style="margin-bottom:8px;">FB会の参加状況を追跡する手段がない</li>
-          <li>情報共有がSlackの個別やりとりに依存</li>
-        </ul>
+
+  <!-- ── Before → After ── -->
+  <div class="team-card pro fade-up">
+    <div class="team-card-header">
+      <div class="team-icon pro"><span class="material-icons-round">compare_arrows</span></div>
+      <div>
+        <h3>Before → After</h3>
+        <span class="pm">5週間の変化</span>
       </div>
-      <div class="card" style="border-left: 4px solid #16a085;">
-        <h4 style="color:#16a085;margin-bottom:12px;"><span class="material-icons-round" style="font-size:20px;vertical-align:middle;">check_circle</span> 3月13日時点</h4>
-        <ul style="list-style:none;padding:0;">
-          <li style="margin-bottom:8px;">会員カルテで各会員の状況を一元管理・可視化</li>
-          <li style="margin-bottom:8px;">オンボーディング15ステップを標準化</li>
-          <li style="margin-bottom:8px;">月〜土 週7日のFB会開催体制を確立</li>
-          <li>AIエージェント3体を設計、日次タスク自動配信が稼働</li>
-        </ul>
+    </div>
+
+    <div class="phase-label feb"><span class="material-icons-round">warning</span> 2月8日時点（Before）</div>
+    <div class="items">
+      <div class="item">
+        <div class="n">1</div>
+        <div class="body">
+          <div class="title">会員管理が手作業</div>
+          <div class="desc">誰がどの段階にいるか把握しづらい状態</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">2</div>
+        <div class="body">
+          <div class="title">オンボーディング未体系化</div>
+          <div class="desc">入会後の導線が整理されていない</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">3</div>
+        <div class="body">
+          <div class="title">FB会の参加状況が追跡不能</div>
+          <div class="desc">参加状況を追跡する手段がない</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">4</div>
+        <div class="body">
+          <div class="title">情報共有がSlack個別依存</div>
+          <div class="desc">チーム内の情報がバラバラ</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-label pro"><span class="material-icons-round">check_circle</span> 3月13日時点（After）</div>
+    <div class="items">
+      <div class="item">
+        <div class="n">1</div>
+        <div class="body">
+          <div class="title">会員カルテで一元管理・可視化</div>
+          <div class="desc">各会員の状況がリアルタイムで把握可能に</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">2</div>
+        <div class="body">
+          <div class="title">オンボーディング15ステップを標準化</div>
+          <div class="desc">入会後の初期案内フローが体系化</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">3</div>
+        <div class="body">
+          <div class="title">月〜土 週7日のFB会開催体制を確立</div>
+          <div class="desc">講師アサイン・進行管理・アーカイブ整備を一から設計</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">4</div>
+        <div class="body">
+          <div class="title">AIエージェント3体を設計</div>
+          <div class="desc">日次タスク自動配信が稼働開始</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- チーム別の実績 -->
-  <div class="section fade-up">
-    <div class="section-label">
-      <span class="material-icons-round">groups</span>
-      チーム別の実績
-    </div>
 
-    <div class="card fade-left" style="margin-bottom:20px;">
-      <h4><span class="material-icons-round" style="font-size:20px;vertical-align:middle;color:#16a085;">folder_shared</span> 会員フォロー・管理基盤（野村冴香）</h4>
-      <p style="color:var(--gray);margin:8px 0 12px;">運営管理テンプレート8種を整備</p>
-      <div class="grid-2">
-        <div><strong>プラットフォーム構築</strong><br><span style="color:var(--gray);">UTAGE/Discord/エルメの設計・構築</span></div>
-        <div><strong>KPI・OKR設計</strong><br><span style="color:var(--gray);">チーム・会員の目標管理と行動指針</span></div>
-        <div><strong>日報・週報管理</strong><br><span style="color:var(--gray);">提出追跡 + 未提出者フォロー設計</span></div>
-        <div><strong>週次PL管理</strong><br><span style="color:var(--gray);">PRO/PREMIUM別の収益管理体制</span></div>
+  <!-- ── 会員フォロー・管理基盤 ── -->
+  <div class="team-card pro fade-left">
+    <div class="team-card-header">
+      <div class="team-icon pro"><span class="material-icons-round">folder_shared</span></div>
+      <div>
+        <h3>会員フォロー・管理基盤</h3>
+        <span class="pm">野村冴香</span>
       </div>
     </div>
 
-    <div class="card fade-right" style="margin-bottom:20px;">
-      <h4><span class="material-icons-round" style="font-size:20px;vertical-align:middle;color:#16a085;">settings</span> 会員導線・システム基盤（岩間慧大）</h4>
-      <p style="color:var(--gray);margin:8px 0 12px;">オンボーディング15ステップを標準化</p>
-      <div class="grid-2">
-        <div><strong>会員カルテの可視化</strong><br><span style="color:var(--gray);">各会員の状況を一元管理</span></div>
-        <div><strong>エルメ定型文・タグ作成</strong><br><span style="color:var(--gray);">入会フロー全体を自動化</span></div>
-        <div><strong>カルテ自動連携</strong><br><span style="color:var(--gray);">会員データの自動集約</span></div>
-        <div><strong>停滞会員フォロー</strong><br><span style="color:var(--gray);">初期停滞会員へのエルメフォロー</span></div>
-      </div>
+    <div class="purpose">
+      <strong>フォーカス指標：</strong>運営管理テンプレート<span class="hl">8種</span>を整備（会員ロースター・オンボーディング進捗管理・日報週報回収管理・FB会参加状況管理・定型文集・面談前資料・KPIダッシュボード・週次PL分析）
     </div>
 
-    <div class="card fade-left" style="margin-bottom:20px;">
-      <h4><span class="material-icons-round" style="font-size:20px;vertical-align:middle;color:#16a085;">event</span> 実践FB会・コンシェルジュ（安部・安永・山本）</h4>
-      <p style="color:var(--gray);margin:8px 0 12px;">月〜土 週7日開催体制を確立</p>
-      <div class="grid-2">
-        <div><strong>FB会の企画・主催</strong><br><span style="color:var(--gray);">講師アサイン・進行管理・アーカイブ整備</span></div>
-        <div><strong>コンシェルジュ活動</strong><br><span style="color:var(--gray);">会員相談・退会相談・個別フォロー</span></div>
-        <div><strong>運営監督</strong><br><span style="color:var(--gray);">FB会講師として登壇 + 全体監督</span></div>
-        <div><strong>非アクティブ会員復帰</strong><br><span style="color:var(--gray);">個別フォロー・復帰支援</span></div>
+    <div class="phase-label pro"><span class="material-icons-round">build</span> 実績</div>
+    <div class="items">
+      <div class="item">
+        <div class="n">1</div>
+        <div class="body">
+          <div class="title">プラットフォーム設計・構築</div>
+          <div class="desc">PRO/PREMIUM向けのUTAGE/Discord/エルメを設計・構築</div>
+        </div>
       </div>
-    </div>
-
-    <div class="card fade-right" style="margin-bottom:20px;">
-      <h4><span class="material-icons-round" style="font-size:20px;vertical-align:middle;color:#16a085;">support_agent</span> 秘書チーム（仲山・門田・浅野・川瀬）</h4>
-      <p style="color:var(--gray);margin:8px 0 12px;">日常オペレーションの安定稼働を実現</p>
-      <div class="grid-2">
-        <div><strong>Discord配信定例業務</strong><br><span style="color:var(--gray);">全員が対応可能な体制に</span></div>
-        <div><strong>UTAGE更新定例業務</strong><br><span style="color:var(--gray);">コンテンツ更新・管理を実施</span></div>
-        <div><strong>Pro秘書定例の開始</strong><br><span style="color:var(--gray);">毎週木曜に定例MTG</span></div>
-        <div><strong>参加予定人数 GAS自動通知</strong><br><span style="color:var(--gray);">講師・運営の準備効率を向上</span></div>
+      <div class="item">
+        <div class="n">2</div>
+        <div class="body">
+          <div class="title">KPI・OKR行動指針の設計</div>
+          <div class="desc">チーム・会員の目標管理と行動指針を策定</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">3</div>
+        <div class="body">
+          <div class="title">日報・週報の回収管理</div>
+          <div class="desc">提出追跡 + 未提出者への段階的フォロー設計</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">4</div>
+        <div class="body">
+          <div class="title">週次PL設計管理</div>
+          <div class="desc">PRO/PREMIUM別の収益管理体制を設計・運用</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- チームの機動力 -->
-  <div class="section fade-up">
-    <div class="section-label">
-      <span class="material-icons-round">bolt</span>
-      チームの機動力
-    </div>
-    <div class="card fade-up" style="text-align:center;padding:32px;">
-      <div style="font-size:18px;font-weight:700;margin-bottom:16px;">投稿155件に対し、スレッド返信<span style="color:#16a085;font-size:24px;">1,800件超</span></div>
-      <div style="color:var(--gray);">1課題あたり平均10件以上の議論。課題発見→即日対応のカルチャーが定着。</div>
-    </div>
-    <div class="grid-3 fade-up" style="margin-top:16px;">
-      <div class="card" style="text-align:center;">
-        <div style="font-size:14px;color:var(--gray);margin-bottom:4px;">カレンダー設定ミス</div>
-        <div style="font-size:20px;font-weight:700;color:#16a085;">当日中に修正</div>
+
+  <!-- ── 会員導線・システム基盤 ── -->
+  <div class="team-card pro fade-right">
+    <div class="team-card-header">
+      <div class="team-icon pro"><span class="material-icons-round">settings</span></div>
+      <div>
+        <h3>会員導線・システム基盤</h3>
+        <span class="pm">岩間慧大</span>
       </div>
-      <div class="card" style="text-align:center;">
-        <div style="font-size:14px;color:var(--gray);margin-bottom:4px;">Discord配信手順不備</div>
-        <div style="font-size:20px;font-weight:700;color:#16a085;">翌日マニュアル化</div>
+    </div>
+
+    <div class="purpose">
+      <strong>フォーカス指標：</strong>オンボーディング<span class="hl">15ステップ</span>を標準化
+    </div>
+
+    <div class="phase-label pro"><span class="material-icons-round">build</span> 実績</div>
+    <div class="items">
+      <div class="item">
+        <div class="n">1</div>
+        <div class="body">
+          <div class="title">会員カルテでの各会員状況の見える化</div>
+          <div class="desc">各会員の状況を一元管理・可視化</div>
+        </div>
       </div>
-      <div class="card" style="text-align:center;">
-        <div style="font-size:14px;color:var(--gray);margin-bottom:4px;">特別招待枠の混乱</div>
-        <div style="font-size:20px;font-weight:700;color:#16a085;">即日CSと連携</div>
+      <div class="item">
+        <div class="n">2</div>
+        <div class="body">
+          <div class="title">入会フローのエルメ定型文・タグ作成</div>
+          <div class="desc">入会フロー全体のエルメ定型文・タグを設計・実装</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">3</div>
+        <div class="body">
+          <div class="title">カルテ自動連携構築</div>
+          <div class="desc">会員データの自動集約・一元管理を実現</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">4</div>
+        <div class="body">
+          <div class="title">初期停滞会員フォロー</div>
+          <div class="desc">停滞会員へのエルメフォロー + 特別招待者への案内対応</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- AI自動化 -->
-  <div class="section fade-up">
-    <div class="section-label">
-      <span class="material-icons-round">smart_toy</span>
-      AI自動化の推進
+
+  <!-- ── 実践FB会・コンシェルジュ ── -->
+  <div class="team-card pro fade-left">
+    <div class="team-card-header">
+      <div class="team-icon pro"><span class="material-icons-round">event</span></div>
+      <div>
+        <h3>実践FB会・コンシェルジュ</h3>
+        <span class="pm">安部友博・安永・山本大輔</span>
+      </div>
     </div>
-    <div class="grid-3 fade-up">
-      <div class="card" style="text-align:center;">
-        <span class="material-icons-round" style="font-size:40px;color:#16a085;">schedule</span>
-        <h4 style="margin:12px 0 8px;">日次タスク自動配信</h4>
-        <p style="color:var(--gray);font-size:14px;">毎朝8:56にチーム全員のタスク状況を自動通知（BOT稼働中）</p>
+
+    <div class="purpose">
+      <strong>フォーカス指標：</strong>月〜土 <span class="hl">週7日</span>開催体制を確立
+    </div>
+
+    <div class="phase-label pro"><span class="material-icons-round">build</span> 実績</div>
+    <div class="items">
+      <div class="item">
+        <div class="n">1</div>
+        <div class="body">
+          <div class="title">実践FB会の企画・主催</div>
+          <div class="desc">講師アサイン・進行管理・アーカイブ整備を一から設計（安部・安永）</div>
+        </div>
       </div>
-      <div class="card" style="text-align:center;">
-        <span class="material-icons-round" style="font-size:40px;color:#16a085;">chat</span>
-        <h4 style="margin:12px 0 8px;">Slack定型文集</h4>
-        <p style="color:var(--gray);font-size:14px;">6カテゴリの定型文でリマインド・フォロー・表彰を効率化</p>
+      <div class="item">
+        <div class="n">2</div>
+        <div class="body">
+          <div class="title">FB会講師として登壇 + 運営全体の監督</div>
+          <div class="desc">安永がFB会講師・コンシェルジュ・運営監督を兼任</div>
+        </div>
       </div>
-      <div class="card" style="text-align:center;">
-        <span class="material-icons-round" style="font-size:40px;color:#16a085;">precision_manufacturing</span>
-        <h4 style="margin:12px 0 8px;">AIエージェント3体</h4>
-        <p style="color:var(--gray);font-size:14px;">日報監視・KPI分析・オンボーディング管理（GASスクリプト作成済み）</p>
+      <div class="item">
+        <div class="n">3</div>
+        <div class="body">
+          <div class="title">コンシェルジュ活動</div>
+          <div class="desc">会員相談・退会相談・個別フォローを実施（安部・山本）</div>
+        </div>
       </div>
+      <div class="item">
+        <div class="n">4</div>
+        <div class="body">
+          <div class="title">非アクティブPREMIUM会員の復帰支援</div>
+          <div class="desc">個別フォロー・復帰支援を実施（安部・山本）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── 秘書チーム ── -->
+  <div class="team-card pro fade-right">
+    <div class="team-card-header">
+      <div class="team-icon pro"><span class="material-icons-round">support_agent</span></div>
+      <div>
+        <h3>秘書チーム・オペレーション</h3>
+        <span class="pm">仲山知里・門田遥・浅野・川瀬</span>
+      </div>
+    </div>
+
+    <div class="purpose">
+      <strong>フォーカス指標：</strong>日常オペレーションの<span class="hl">安定稼働</span>を実現
+    </div>
+
+    <div class="phase-label pro"><span class="material-icons-round">build</span> 実績</div>
+    <div class="items">
+      <div class="item">
+        <div class="n">1</div>
+        <div class="body">
+          <div class="title">Discord配信定例業務</div>
+          <div class="desc">秘書チーム全員が対応可能な体制に</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">2</div>
+        <div class="body">
+          <div class="title">UTAGE更新定例業務</div>
+          <div class="desc">定期的なコンテンツ更新・管理を実施</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">3</div>
+        <div class="body">
+          <div class="title">Pro秘書定例の開始</div>
+          <div class="desc">毎週木曜13:00に定例ミーティングを実施</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">4</div>
+        <div class="body">
+          <div class="title">参加予定人数の事前周知GASセット</div>
+          <div class="desc">自動通知で講師・運営の準備効率を向上</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── チームの機動力 ── -->
+  <div class="team-card pro fade-up">
+    <div class="team-card-header">
+      <div class="team-icon pro"><span class="material-icons-round">bolt</span></div>
+      <div>
+        <h3>チームの機動力</h3>
+        <span class="pm">課題発見→即日対応のカルチャー</span>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="num"><span class="count-up" data-target="155">0</span><span class="unit">件</span></div>
+        <div class="label">Slack投稿数</div>
+      </div>
+      <div class="stat">
+        <div class="num">1,800<span class="unit">件超</span></div>
+        <div class="label">スレッド返信数</div>
+      </div>
+      <div class="stat">
+        <div class="num">10<span class="unit">件以上</span></div>
+        <div class="label">1課題あたりの議論数</div>
+      </div>
+    </div>
+
+    <div class="phase-label pro"><span class="material-icons-round">speed</span> 対応速度の実例</div>
+    <div class="items">
+      <div class="item">
+        <div class="n">1</div>
+        <div class="body">
+          <div class="title">カレンダー公開設定ミスで面談予約が入る</div>
+          <div class="desc"><strong style="color:#16a085;">当日中</strong>に原因特定・修正・再発防止策を実施</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">2</div>
+        <div class="body">
+          <div class="title">Discord配信手順の不備</div>
+          <div class="desc"><strong style="color:#16a085;">翌日</strong>にマニュアル化・秘書チームへ展開</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">3</div>
+        <div class="body">
+          <div class="title">特別招待枠の案内で会員に混乱</div>
+          <div class="desc"><strong style="color:#16a085;">即日</strong>CSと連携し個別フォロー</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── AI自動化の推進 ── -->
+  <div class="team-card pro fade-up">
+    <div class="team-card-header">
+      <div class="team-icon pro"><span class="material-icons-round">smart_toy</span></div>
+      <div>
+        <h3>AI自動化の推進</h3>
+        <span class="pm">推進中</span>
+      </div>
+    </div>
+
+    <div class="items">
+      <div class="item">
+        <div class="n">1</div>
+        <div class="body">
+          <div class="title">日次タスク自動配信（BOT稼働中）</div>
+          <div class="desc">毎朝8:56にチーム全員のタスク状況を自動通知</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">2</div>
+        <div class="body">
+          <div class="title">Slack定型文集（6カテゴリ）</div>
+          <div class="desc">リマインド・フォロー・表彰など定型対応を効率化</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="n">3</div>
+        <div class="body">
+          <div class="title">AIエージェント3体の設計</div>
+          <div class="desc">日報監視・KPI分析・オンボーディング管理（GASスクリプト作成済み）</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote" style="border-left-color:#16a085;">
+      人がやるべき仕事（判断・コーチング・信頼構築）に集中できる体制を目指す。<br>
+      AIが「作業」を担い、チームメンバーは「会員との対話」に時間を使えるようにする。
     </div>
   </div>
 
