@@ -416,14 +416,25 @@
     position: relative;
     overflow: hidden;
   }
-  .stat.hero-stat .num, .stat.hero-stat .label { color: var(--white); position: relative; z-index: 1; }
-  .stat.hero-stat .label { opacity: 0.9; }
-  .team-card.local .stat.hero-stat { background: linear-gradient(135deg, var(--team-local), #d35400); }
-  .team-card.discord .stat.hero-stat { background: linear-gradient(135deg, var(--team-discord), #4752c4); }
-  .team-card.talent .stat.hero-stat { background: linear-gradient(135deg, var(--team-talent), #0e6655); }
-  .team-card.webinar .stat.hero-stat { background: linear-gradient(135deg, var(--team-webinar), #922b21); }
-  .team-card.bootcamp .stat.hero-stat { background: linear-gradient(135deg, var(--team-bootcamp), #1a5276); }
-  .team-card.zemi .stat.hero-stat { background: linear-gradient(135deg, var(--team-zemi), #6c3483); }
+  .stat.hero-stat .num {
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .stat.hero-stat .label {
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+    opacity: 0.95;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  }
+  .team-card.local .stat.hero-stat { background: linear-gradient(135deg, #bf6a10, #9a4500); }
+  .team-card.discord .stat.hero-stat { background: linear-gradient(135deg, #4752c4, #363da0); }
+  .team-card.talent .stat.hero-stat { background: linear-gradient(135deg, #0e7a62, #0a5c49); }
+  .team-card.webinar .stat.hero-stat { background: linear-gradient(135deg, #a83225, #8a2218); }
+  .team-card.bootcamp .stat.hero-stat { background: linear-gradient(135deg, #1f6fa0, #165580); }
+  .team-card.zemi .stat.hero-stat { background: linear-gradient(135deg, #7a3898, #5e2a76); }
 
   .change {
     display: inline-block;
